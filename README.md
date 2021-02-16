@@ -10,8 +10,9 @@ Tool to merge multiple log files into one, outputting in chronological order
 The first param is the output path, further params are taken as a list of input paths
 
 Each line in the input files should be in the following format: `yyyy-mm-dd hh:mm:ss.ms message`.
-Output will be in the same format.
-Any input lines not in this format will be ignored (with a console message).
+Output is in the same format.
+Any input lines not in this format are ignored (with a console message).
+Lines with the same timestamp are sorted alphabetically.
 
 Here is an example:
 2018-06-29 14:14:46.675 Hello Refract!
@@ -22,3 +23,4 @@ Here is an example:
 
 ## Assumptions
 - Would be simpler to just use awk, cat, sort, etc
+- Assumes all log files are in the same time zone

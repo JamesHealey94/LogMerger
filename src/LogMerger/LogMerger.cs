@@ -2,7 +2,7 @@
 
 namespace LogMerger
 {
-    public class Class1
+    public class LogMerger
     {
     }
 }

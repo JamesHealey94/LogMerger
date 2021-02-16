@@ -1,0 +1,7 @@
+﻿2018-06-29 14:12:46.675 Test Input 3 - Message 1
+2018-06-29 14:13:10.123 Test Input 3 - Message 2
+2018-06-29 14:13:46.675 Test Input 2 - Message 1
+2018-06-29 14:14:46.675 Hello Refract!
+2018-06-29 14:14:50.123 Test Input 2 - Message 2
+2018-06-29 14:15:00.123 Goodbye Refract!
+2018-06-29 14:15:00.123 Test Input 3 - Message 3
