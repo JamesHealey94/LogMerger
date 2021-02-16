@@ -15,7 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogMergerTests", "tests\Log
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "project", "project", "{3A00B0D4-BB3B-497C-B3BD-BEDB2B7E9309}"
 	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		Dockerfile = Dockerfile
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
