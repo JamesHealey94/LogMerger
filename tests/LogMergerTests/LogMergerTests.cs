@@ -1,3 +1,4 @@
+using LogMerger;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -33,22 +34,26 @@ namespace LogMergerTests
         public void Reader_Works()
         {
             var expected = Input1Logs;
-            var result = new LogReader.Read(InputPath1);
+            var result = LogReader.Read(InputPath1);
             CollectionAssert.AreEqual(expected, result);
         }
 
         [TestMethod]
         public void Writer_Works()
         {
-            var expected = new LogReader.Read(InputPath1);
-            var result = new LogWriter.Write("writer-test.txt", Input1Logs);
+            var expected = LogReader.Read(InputPath1);
+
+            var testPath = "writer-test.txt";
+            new FileLogWriter().Write(testPath, Input1Logs);
+            var result = LogReader.Read(testPath);
+            
             CollectionAssert.AreEqual(expected, result);
         }
 
         [TestMethod]
         public void One_Input()
         {
-            var expected = new LogReader.Read(InputPath1);
+            var expected = LogReader.Read(InputPath1);
             var result = new LogMerger.LogMerger().Merge(new string[] { InputPath1 });
             CollectionAssert.AreEqual(expected, result);
         }
@@ -56,24 +61,24 @@ namespace LogMergerTests
         [TestMethod]
         public void Duplicate_Input()
         {
-            var expected = new LogReader.Read(InputPath1);
-            var result = new LogMerger.LogMerger().Merge(InputPath1, new string[] { InputPath1, InputPath1 });
+            var expected = LogReader.Read(InputPath1);
+            var result = new LogMerger.LogMerger().Merge(new string[] { InputPath1, InputPath1 });
             CollectionAssert.AreEqual(expected, result);
         }
 
         [TestMethod]
         public void Will_Merge_Two_In_Order()
         {
-            var expected = new LogReader.Read(InputPath12);
-            var result = new LogMerger.LogMerger().Merge(OutputPath12, new string[] { InputPath1, InputPath2 });
+            var expected = LogReader.Read(OutputPath12);
+            var result = new LogMerger.LogMerger().Merge(new string[] { InputPath1, InputPath2 });
             CollectionAssert.AreEqual(expected, result);
         }
 
         [TestMethod]
-        public void Will_Merge_Three_In_Order()
+        public void Will_Merge_Three_In_Order() // Also contains 2 logs with the same timestamp
         {
-            var expected = new LogReader.Read(InputPath123);
-            var result = new LogMerger.LogMerger().Merge(OutputPath123, new string[] { InputPath1, InputPath2, InputPath3 });
+            var expected = LogReader.Read(OutputPath123);
+            var result = new LogMerger.LogMerger().Merge(new string[] { InputPath1, InputPath2, InputPath3 });
             CollectionAssert.AreEqual(expected, result);
         }
     }
