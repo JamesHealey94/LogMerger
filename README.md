@@ -4,14 +4,14 @@ Tool to merge multiple log files into one, outputting in chronological order
 ## Example usage
 The first param is the output path, further params are taken as a list of input paths
 
-Each line in the input files should be in the following format: `yyyy-mm-dd hh:mm:ss.ms message`.
-Output is in the same format.
-Any files with lines not in this format are ignored (with a console message).
-Lines with the same timestamp are sorted alphabetically.
+- Each line in the input files should be in the following format: `yyyy-mm-dd hh:mm:ss.ms message`.
+- Output is in the same format.
+- Any files with lines not in this format are ignored (with a console message).
+- Lines with the same timestamp are sorted alphabetically.
 
 Here is an example:
-2018-06-29 14:14:46.675 Hello Refract!
-2018-06-29 14:15:00.123 Goodbye Refract!
+- 2018-06-29 14:14:46.675 Hello Refract!
+- 2018-06-29 14:15:00.123 Goodbye Refract!
 
 ## Run Tests
 - `dotnet test`
