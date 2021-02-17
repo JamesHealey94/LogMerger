@@ -54,7 +54,7 @@ namespace LogMergerTests
         public void One_Input()
         {
             var expected = LogReader.Read(InputPath1);
-            var result = new LogMerger.LogMerger().Merge(new string[] { InputPath1 });
+            var result = LogMerger.LogMerger.Merge(new string[] { InputPath1 });
             CollectionAssert.AreEqual(expected, result);
         }
 
@@ -62,7 +62,7 @@ namespace LogMergerTests
         public void Duplicate_Input()
         {
             var expected = LogReader.Read(InputPath1);
-            var result = new LogMerger.LogMerger().Merge(new string[] { InputPath1, InputPath1 });
+            var result = LogMerger.LogMerger.Merge(new string[] { InputPath1, InputPath1 });
             CollectionAssert.AreEqual(expected, result);
         }
 
@@ -70,7 +70,7 @@ namespace LogMergerTests
         public void Will_Merge_Two_In_Order()
         {
             var expected = LogReader.Read(OutputPath12);
-            var result = new LogMerger.LogMerger().Merge(new string[] { InputPath1, InputPath2 });
+            var result = LogMerger.LogMerger.Merge(new string[] { InputPath1, InputPath2 });
             CollectionAssert.AreEqual(expected, result);
         }
 
@@ -78,7 +78,7 @@ namespace LogMergerTests
         public void Will_Merge_Three_In_Order() // Also contains 2 logs with the same timestamp
         {
             var expected = LogReader.Read(OutputPath123);
-            var result = new LogMerger.LogMerger().Merge(new string[] { InputPath1, InputPath2, InputPath3 });
+            var result = LogMerger.LogMerger.Merge(new string[] { InputPath1, InputPath2, InputPath3 });
             CollectionAssert.AreEqual(expected, result);
         }
     }

@@ -1,17 +1,18 @@
-﻿using System;
+﻿using System.Linq;
 
 namespace LogMerger
 {
     public class LogMerger
     {
-        public Log[] Merge(string[] inputPaths)
+        public static Log[] Merge(string[] inputPaths)
         {
-            throw new NotImplementedException();
-        }
-
-        public Log[] Merge(Log[] input)
-        {
-            throw new NotImplementedException();
+            return
+                inputPaths
+                .SelectMany(LogReader.Read)
+                .Distinct()
+                .OrderBy(l => l.DateTime)
+                .ThenBy(l => l.Message)
+                .ToArray();
         }
     }
 }
