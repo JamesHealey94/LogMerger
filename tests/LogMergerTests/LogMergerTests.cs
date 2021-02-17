@@ -44,7 +44,7 @@ namespace LogMergerTests
             var expected = LogReader.Read(InputPath1);
 
             var testPath = "writer-test.txt";
-            new FileLogWriter().Write(testPath, Input1Logs);
+            FileLogWriter.Write(testPath, Input1Logs);
             var result = LogReader.Read(testPath);
             
             CollectionAssert.AreEqual(expected, result);

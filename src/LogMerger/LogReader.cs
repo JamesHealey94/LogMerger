@@ -23,9 +23,9 @@ namespace LogMerger
                     );
                 }).ToArray();
             }
-            catch
+            catch (Exception ex)
             {
-                Console.WriteLine($"Exception reading file: '{inputPath}' - Ignoring");
+                Console.WriteLine($"Exception reading file: '{inputPath}' - Ignoring - Exception: {ex.Message}");
                 return Array.Empty<Log>();
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.IO;
+using System.Linq;
 
 namespace LogMerger
 {
@@ -9,9 +10,9 @@ namespace LogMerger
             Write("output.txt", input);
         }
 
-        public void Write(string outputPath, Log[] input)
+        public static void Write(string outputPath, Log[] input)
         {
-            throw new NotImplementedException();
+            File.WriteAllLines(outputPath, input.Select(i => $"{i.DateTime:yyyy-MM-dd HH:mm:ss.fff} {i.Message}"));
         }
     }
 }

@@ -24,3 +24,9 @@ Here is an example:
 ## Assumptions
 - Would be simpler to just use awk, cat, sort, etc
 - Assumes all log files are in the same time zone
+
+## Further enhancements
+- Reading the files could easily be done async
+- Could use streams to write out files as they're being read, but would need extra logic to ensure chronological order was preserved
+- DateTime format could be a param
+- More testing around datetimes
