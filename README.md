@@ -1,11 +1,6 @@
 # LogMerger
 Tool to merge multiple log files into one, outputting in chronological order
 
-## Build and Run
-- `dotnet publish src/LogMerger.Runner -o output`
-- `docker build -t log-merger .`
-- `docker run -t log-merger output.txt input/test1.txt input/test2.txt`
-
 ## Example usage
 The first param is the output path, further params are taken as a list of input paths
 
@@ -19,7 +14,13 @@ Here is an example:
 2018-06-29 14:15:00.123 Goodbye Refract!
 
 ## Run Tests
-- `dotnet test tests\LogMergerTests\LogMergerTests.csproj`
+- `dotnet test`
+
+## Docker
+- `dotnet publish src/LogMerger.Runner -o output`
+- `docker build -t log-merger .`
+- `docker run -t log-merger output.txt input/test-input1.txt input/test-input2.txt`
+- Console output will appear in logs, but output file may not be accessible
 
 ## Assumptions
 - Would be simpler to just use awk, cat, sort, etc
