@@ -11,7 +11,7 @@ The first param is the output path, further params are taken as a list of input 
 
 Each line in the input files should be in the following format: `yyyy-mm-dd hh:mm:ss.ms message`.
 Output is in the same format.
-Any input lines not in this format are ignored (with a console message).
+Any files with lines not in this format are ignored (with a console message).
 Lines with the same timestamp are sorted alphabetically.
 
 Here is an example:
@@ -30,3 +30,4 @@ Here is an example:
 - Could use streams to write out files as they're being read, but would need extra logic to ensure chronological order was preserved
 - DateTime format could be a param
 - More testing around datetimes
+- Could only ignore the bad lines rather than the whole file
