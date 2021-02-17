@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LogMerger.Runner": {
+      "commandName": "Project",
+      "commandLineArgs": "runner-output.txt resources/test-input1.txt resources/test-input2.txt resources/test-input3.txt"
+    }
+  }
+}

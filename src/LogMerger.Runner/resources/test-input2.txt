@@ -1,0 +1,2 @@
+﻿2018-06-29 14:13:46.675 Test Input 2 - Message 1
+2018-06-29 14:14:50.123 Test Input 2 - Message 2
