@@ -2,9 +2,12 @@
 
 namespace LogMerger
 {
-    public class Log
+    public record Log
     {
-        public DateTime DateTime { get; set; }
-        public string Message { get; set; }
+        public DateTime DateTime { get; }
+        public string Message { get; }
+
+        public Log(DateTime dateTime, string message) => (DateTime, Message) = (dateTime, message);
+
     }
 }

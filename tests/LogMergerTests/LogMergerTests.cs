@@ -12,15 +12,15 @@ namespace LogMergerTests
         private readonly Log[] Input1Logs = new Log[]
             {
                 new Log
-                {
-                    DateTime = new DateTime(2018, 06, 29, 14, 14, 46, 675),
-                    Message = "Hello Refract!"
-                },
+                (
+                    new DateTime(2018, 06, 29, 14, 14, 46, 675),
+                    "Hello Refract!"
+                ),
                 new Log
-                {
-                    DateTime = new DateTime(2018, 06, 29, 14, 15, 00, 123),
-                    Message = "Goodbye Refract!"
-                },
+                (
+                    new DateTime(2018, 06, 29, 14, 15, 00, 123),
+                    "Goodbye Refract!"
+                ),
             };
 
         private readonly string InputPath1    = "resources/test-input1.txt";

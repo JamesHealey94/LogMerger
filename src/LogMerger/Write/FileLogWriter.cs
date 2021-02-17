@@ -9,7 +9,7 @@ namespace LogMerger
             Write("output.txt", input);
         }
 
-        public void Write(string outputPath = "output.txt", Log[] input)
+        public void Write(string outputPath, Log[] input)
         {
             throw new NotImplementedException();
         }
